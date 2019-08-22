@@ -9,13 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.Text
       },
-      subjectId: {
-        type: Sequelize.INTEGER
+      courseId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Courses', key: 'id', as: 'courseId', }
       },
       optionId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Options', key: 'id', as: 'optionId', }
       },
       createdAt: {
         allowNull: false,

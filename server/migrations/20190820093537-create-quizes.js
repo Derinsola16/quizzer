@@ -8,13 +8,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      subjectId: {
-        type: Sequelize.INTEGER
+      courseId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Courses', key: 'id', as: 'courseId', }
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Users', key: 'id', as: 'userId', }
       },
       score: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
