@@ -9,12 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        unique: true,
+        unique: 'compositeIndex',
         allowNull: false,
         type: Sequelize.Text
       },
       courseId: {
-        unique: true,
+        unique: 'compositeIndex',
         allowNull: false,
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
