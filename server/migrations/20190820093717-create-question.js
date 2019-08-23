@@ -1,25 +1,30 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('Questions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      email: {
-        allowNull: false,
+      description: {
         unique: true,
-        type: Sequelize.STRING(100)
-      },
-      role: {
         allowNull: false,
-        type: Sequelize.ENUM('examiner', 'candidate')
+        type: Sequelize.Text
       },
-      password: {
+      courseId: {
+        unique: true,
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Courses', key: 'id', as: 'courseId', }
+      },
+      optionId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Options', key: 'id', as: 'optionId', }
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +37,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Questions');
   }
 };
