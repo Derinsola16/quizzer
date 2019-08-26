@@ -9,12 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       text: {
-        unique: 'compositeIndex',
+        unique: 'optionCompositeIndex',
         allowNull: false,
         type: Sequelize.TEXT
       },
       questionId: {
-        unique: 'compositeIndex',
+        unique: 'optionCompositeIndex',
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: { model: 'Questions', key: 'id', as: 'questionId', }
