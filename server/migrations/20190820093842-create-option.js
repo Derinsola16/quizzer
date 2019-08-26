@@ -9,10 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       text: {
-        type: Sequelize.STRING
+        unique: 'optionCompositeIndex',
+        allowNull: false,
+        type: Sequelize.TEXT
       },
       questionId: {
-        type: Sequelize.INTEGER
+        unique: 'optionCompositeIndex',
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Questions', key: 'id', as: 'questionId', }
       },
       createdAt: {
         allowNull: false,

@@ -9,13 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING
+        unique: 'questionCompositeIndex',
+        allowNull: false,
+        type: Sequelize.Text
       },
-      subjectId: {
-        type: Sequelize.INTEGER
+      courseId: {
+        unique: 'questionCompositeIndex',
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: { model: 'Courses', key: 'id', as: 'courseId', }
       },
       optionId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        onDelete: 'NO ACTION',
+        references: { model: 'Options', key: 'id', as: 'optionId', }
       },
       createdAt: {
         allowNull: false,
