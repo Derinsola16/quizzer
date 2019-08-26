@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.Text
       },
       courseId: {
-        unique: 'qustionCompositeIndex',
+        unique: 'questionCompositeIndex',
         allowNull: false,
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
