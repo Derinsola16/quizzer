@@ -17,13 +17,13 @@ module.exports = {
         unique: 'questionCompositeIndex',
         allowNull: false,
         type: Sequelize.INTEGER,
-        onDelete: 'NO ACTION',
+        onDelete: 'CASCADE',
         references: { model: 'Courses', key: 'id', as: 'courseId', }
       },
       optionId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+        onDelete: 'NO ACTION',
         references: { model: 'Options', key: 'id', as: 'optionId', }
       },
       createdAt: {
