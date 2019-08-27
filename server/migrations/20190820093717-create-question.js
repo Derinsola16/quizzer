@@ -11,7 +11,7 @@ module.exports = {
       description: {
         unique: 'questionCompositeIndex',
         allowNull: false,
-        type: Sequelize.Text
+        type: Sequelize.STRING(100)
       },
       courseId: {
         unique: 'questionCompositeIndex',
@@ -21,7 +21,7 @@ module.exports = {
         references: { model: 'Courses', key: 'id', as: 'courseId', }
       },
       optionId: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
         onDelete: 'NO ACTION',
         references: { model: 'Options', key: 'id', as: 'optionId', }
