@@ -9,15 +9,11 @@ var appRouter = function (app) {
 .send({ message: 'Welcome to the Quiz API!', })
 )
 
-app.post('/api/candidates', Candidates.signUp); 
-
-app.get('/api/allcandidate', Candidates.candidatelist);
+app.post('/api/candidates', Candidates.signUp);
 
 app.post('/api/:courseId/questions', Questions.create);
 
 app.get('/api/allquestions', Questions.list);
-
-app.post('/api/courses', Courses.create);
 
 app.get('/api/allcourses', Courses.list);
 
@@ -28,4 +24,4 @@ app.get('/api/allquiz', Quizes.quizlist);
 }; 
 
 module.exports = appRouter;
-// API route for user to signup  export default (app) => {}
+// API route for user to signup 

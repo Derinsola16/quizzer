@@ -10,11 +10,5 @@ class Candidates {
     .send({ success: true, message: 'User successfully created', userData })
     ) 
 } 
-
-static candidatelist(req, res) {
-        return User.findAll()
-            .then(allcandidate => res.status(200)
-                .send(allcandidate));
-    }
 } 
    module.exports = Candidates;

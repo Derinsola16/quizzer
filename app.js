@@ -1,7 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var routes = require("./server/routes");
-//import routes from './server/routes';
 
 var app = express();
 
