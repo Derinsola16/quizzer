@@ -20,6 +20,12 @@ module.exports = {
         onDelete: 'CASCADE',
         references: { model: 'Courses', key: 'id', as: 'courseId', }
       },
+      optionId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        onDelete: 'NO ACTION',
+        references: { model: 'Options', key: 'id', as: 'optionId', }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
