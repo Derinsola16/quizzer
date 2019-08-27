@@ -6,11 +6,54 @@ module.exports = {
         name: 'Javascript',
         createdAt: new Date(),
         updatedAt: new Date(),
- 
-        // name: ('English','Php'),
-        // createdAt: new Date(),
-        // updatedAt: new Date(),
-      }], {});
+      },
+        {
+          name: 'Node',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+
+        {
+          name: 'Vue',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Bootstrap',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Php',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Python',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'English',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'General',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Html',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Css',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        }
+    ],{});
   
   },
 
