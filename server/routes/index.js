@@ -9,17 +9,17 @@ var appRouter = function (app) {
 .send({ message: 'Welcome to the Quiz API!', })
 )
 
-app.post('/api/candidates', Candidates.signUp);
+app.post('/candidates', Candidates.create);
 
-app.post('/api/:courseId/questions', Questions.create);
+app.post('/questions', Questions.create);
 
-app.get('/api/allquestions', Questions.list);
+app.get('/questions', Questions.list);
 
-app.get('/api/allcourses', Courses.list);
+app.get('/courses', Courses.list);
 
-app.post('/api/:courseId/:userId/quizes', Quizes.create);
+app.post('/quizzes', Quizes.create);
 
-app.get('/api/allquiz', Quizes.quizlist);
+app.get('/quizzes', Quizes.list);
 
 }; 
 

@@ -11,8 +11,8 @@ class Questions {
 }
 static list(req, res) { 
     return Question.findAll()
-    .then(allquestions => res.status(200)
-    .send(allquestions)); 
+    .then(questions => res.status(200)
+    .send(questions)); 
 }
 }
  module.exports = Questions

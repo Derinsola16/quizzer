@@ -2,7 +2,7 @@ var model = require("../models")
 const { User } = model; 
 
 class Candidates { 
-    static signUp(req, res) { 
+    static create(req, res) { 
     const { email, password } = req.body
     const role = 'CANDIDATE'
     return User.create({email, password, role })

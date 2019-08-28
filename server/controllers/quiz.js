@@ -9,10 +9,10 @@ class Quizes {
                 .send({ message: `Your score is ${score} %`, quiz })
             )
     }
-    static quizlist(req, res) {
+    static list(req, res) {
         return Quiz.findAll()
-            .then(allquiz => res.status(200)
-                .send(allquiz));
+            .then(quizzes => res.status(200)
+                .send(quizzes));
     }
 }
 module.exports = Quizes

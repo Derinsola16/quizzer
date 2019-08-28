@@ -4,8 +4,8 @@ class Courses {
 
     static list(req, res) {
         return Course.findAll()
-            .then(allcourses => res.status(200)
-                .send(allcourses));
+            .then(courses => res.status(200)
+                .send(courses));
     }
 }    
 
