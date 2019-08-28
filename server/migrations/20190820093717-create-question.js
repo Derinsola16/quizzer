@@ -11,7 +11,7 @@ module.exports = {
       description: {
         unique: 'questionCompositeIndex',
         allowNull: false,
-        type: Sequelize.Text
+        type: Sequelize.STRING(100)
       },
       courseId: {
         unique: 'questionCompositeIndex',
