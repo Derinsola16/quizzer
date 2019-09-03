@@ -24,10 +24,7 @@ class Questions {
 
 
 static async list(req, res) { 
-    
-    const courses = await Course.findAll()
 
-    let course = courses
         const allQuestions = await Question.findAll({
             order: [
                 [Sequelize.literal('RANDOM()')]
@@ -35,9 +32,9 @@ static async list(req, res) {
 
             limit: 5,
 
-            where: { courseId: course[5].id}
+            where: { courseId: 33}
         })
-   course++
+
 
     let questions = []
     let index = 0

@@ -10,22 +10,15 @@ class Candidates {
     const { email} = req.body
     const password  =  bcrypt.hashSync(req.body.password, saltRounds);
     const role = 'CANDIDATE'
-    //await User.create({email, password, role })
-        await User.create({role, email, password}, (err) => {
-            if (err) return res.status(500).send("Server error!");
-            findUserByEmail(email, (err, user) => {
-                if (err) return res.status(500).send('Server error!');
-                const expiresIn = 24 * 60 * 60;
-                const accessToken = jwt.sign({ id: user.id }, SECRET_KEY, {
-                    expiresIn: expiresIn
+
+      const users = await User.create({role, email, password})
+
+        const expiresIn = 24 * 60 * 60;
+            const accessToken = jwt.sign({ id: users.id }, SECRET_KEY, {
+                     expiresIn
                 });
-                res.status(200).send({
-                    "user": user, "access_token": accessToken, "expires_in": expiresIn
-                });
-            });
-        });
-           
-    return res.status(201).send({ message: 'User successfully created', data: null})
+
+        return res.status(201).send({ message: 'User successfully created', "user": users, "access_token": accessToken, "expires_in": expiresIn})
     }
 }
    module.exports = Candidates;

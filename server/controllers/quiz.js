@@ -26,18 +26,6 @@ class Quizes {
 
         // return message and score as response
         return res.status(201).send({ message: 'Quiz succesfully recorded', score })
-        
-        
-        //pair each question to to an option
-        //  const questionObject = questions.map(question => {
-        //     return { optionId: question, questionId: question }
-        // })
-        // const createdQuestions = await Answer.bulkCreate(questionObject)
-
-        
-
-        //  return res.status(201).send({ message: 'Quiz succesfully created'})
-        //  console.log(createdQuestions)
 
     }
 
