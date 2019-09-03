@@ -4,14 +4,22 @@
   "description": "An online quiz test",
   "main": "index.js",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "passport": "^0.4.0",
+    "passport-auth0": "^1.2.1",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "postgresql": "0.0.1",
     "sequelize": "^5.15.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     score: { type: DataTypes.INTEGER, allowNull: { args: false, msg: 'Score cannot be empty' }, }
   }, {});
   Quiz.associate = function (models) {
-    // associations can be defined here
+    //associations can be defined here
+    Quiz.belongsTo(models.User)
   };
   return Quiz;
 };

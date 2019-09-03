@@ -1,11 +1,9 @@
 var model = require("../models")
 const { Course } = model;
 class Courses {
-
-    static list(req, res) {
-        return Course.findAll()
-            .then(courses => res.status(200)
-                .send(courses));
+    static async list(req, res) {
+        const courses = await Course.findAll()        
+          return res.status(201).send(courses);
     }
 }    
 
