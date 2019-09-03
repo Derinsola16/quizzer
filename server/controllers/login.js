@@ -19,7 +19,7 @@ class Login {
             return res.status(401).send({message: 'Email and Password does not match!'});
 
         const expiresIn = 24 * 60 * 60;
-        delete users.password
+        delete users[0].password
              const accessToken = jwt.sign(users[0], SECRET_KEY, {
                  expiresIn
              });
