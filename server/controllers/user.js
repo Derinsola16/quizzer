@@ -11,8 +11,9 @@ class Candidates {
     const role = 'CANDIDATE'
 
       const user = await User.create({role, email, password})  
+      delete user.password
 
-        return res.status(201).send({ message: 'User successfully created', "user": user})
+        return res.status(201).send({ message: 'User successfully created', user})
     }
 }
    module.exports = Candidates;

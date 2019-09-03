@@ -1,6 +1,6 @@
 var model = require("../models") 
 const Sequelize = require("sequelize")
-const { Question, Option, Answer, Course} = model; 
+const { Question, Option, Answer} = model; 
 
 class Questions { 
     static  async create(req, res) {
@@ -24,15 +24,14 @@ class Questions {
 
 
 static async list(req, res) { 
-
+    const { courseId }  = req.query
+    const where = courseId ? { courseId } : {}
         const allQuestions = await Question.findAll({
             order: [
                 [Sequelize.literal('RANDOM()')]
             ],
-
             limit: 5,
-
-            where: { courseId: 33}
+            where
         })
 
 
