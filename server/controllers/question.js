@@ -1,5 +1,7 @@
 var model = require("../models") 
 const Sequelize = require("sequelize")
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = "secretkey224400";
 const { Question, Option, Answer} = model; 
 
 class Questions { 
@@ -23,16 +25,34 @@ class Questions {
     }
 
 
-static async list(req, res) { 
-    const { courseId }  = req.query
+static async list(req, res) {
+
+    const { authorization } = req.headers
+    
+    const token = authorization && authorization.split(" ") && authorization.split(" ")[1]
+
+    let isAdmin = false
+    if (token){
+        const user = jwt.verify(token, SECRET_KEY)
+        isAdmin = user && user.role === 'EXAMINER'
+    }
+     
+    
+    
+     let findParam
+    if(!isAdmin){
+    const { courseId } = req.query
     const where = courseId ? { courseId } : {}
-        const allQuestions = await Question.findAll({
-            order: [
-                [Sequelize.literal('RANDOM()')]
-            ],
-            limit: 5,
-            where
-        })
+    findParam = {
+        order: [
+            [Sequelize.literal('RANDOM()')]
+        ],
+        limit: 5,
+        where
+    }
+    } else findParam = {}
+    
+    const allQuestions = await Question.findAll(findParam)
 
 
     let questions = []
