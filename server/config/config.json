@@ -15,9 +15,9 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "bmqrkxnsvgklct",
-    "password": "de49d40ba042c6f9c678ebf0372605e6585ea3f754dc40661efc591ad7a06b9b",
-    "database": "df01e0828gqr9s",
+    "username": "jxvwwdvmuktigb",
+    "password": "43e3fcdc233588774ac127c5fa69be41e30b4deae8b0306098f4cef7fa63080f",
+    "database": "dchgj7mbd6kdt8",
     "host": "ec2-23-21-177-102.compute-1.amazonaws.com",
     "dialect": "postgres",
     "operatorsAliases": false
