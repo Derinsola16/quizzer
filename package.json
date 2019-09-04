@@ -21,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "./node_modules/.bin/sequelize db:migrate",
     "seed": "./node_modules/.bin/sequelize db:seed:all",
-    "heroku-postbuild": "npm run migrate &&  npm run seed",
+    "heroku-postbuild": "npm run migrate",
     "start": "node app.js"
   },
   "author": "",
