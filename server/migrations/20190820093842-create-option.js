@@ -15,6 +15,7 @@ module.exports = {
       },
       questionId: {
         unique: 'optionCompositeIndex',
+        allowNull: false,
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: { model: 'Questions', key: 'id', as: 'questionId', }

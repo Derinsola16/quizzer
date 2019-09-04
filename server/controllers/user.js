@@ -1,14 +1,19 @@
 var model = require("../models")
 const { User } = model; 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 class Candidates { 
-    static signUp(req, res) { 
-    const { email, password } = req.body
+    static async create(req, res) { 
+    const { email} = req.body
+    const password  =  bcrypt.hashSync(req.body.password, saltRounds);
     const role = 'CANDIDATE'
-    return User.create({email, password, role })
-    .then(userData => res.status(201)
-    .send({ success: true, message: 'User successfully created', userData })
-    ) 
-} 
-} 
+
+      const user = await User.create({role, email, password})  
+      delete user.password
+
+        return res.status(201).send({ message: 'User successfully created', user})
+    }
+}
    module.exports = Candidates;
