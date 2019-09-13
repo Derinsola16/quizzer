@@ -1,6 +1,6 @@
 var model = require("../models")
 var Sequelize = require("sequelize")
-var sequelize = new Sequelize('quizzer', 'postgres', 'Aderinsola16',{host: 'localhost', dialect: 'postgres'});
+var sequelize = new Sequelize('dchgj7mbd6kdt8', 'jxvwwdvmuktigb', '43e3fcdc233588774ac127c5fa69be41e30b4deae8b0306098f4cef7fa63080f', {host: 'ec2- 23 - 21 - 177 - 102.compute - 1.amazonaws.com', dialect: 'postgres'});
 
 const { Quiz, Answer} = model;
 class Quizes {
@@ -18,7 +18,7 @@ class Quizes {
                    optionId: question[1]
                }
            })
-           
+            
            score += (answer.length * 20)
         }
         // crreate quiz
