@@ -1,6 +1,6 @@
 var model = require("../models")
 var Sequelize = require("sequelize")
-var sequelize = new Sequelize('dchgj7mbd6kdt8', 'jxvwwdvmuktigb', '43e3fcdc233588774ac127c5fa69be41e30b4deae8b0306098f4cef7fa63080f', {host: 'ec2- 23 - 21 - 177 - 102.compute - 1.amazonaws.com', dialect: 'postgres'});
+var sequelize = new Sequelize('dchgj7mbd6kdt8', 'jxvwwdvmuktigb', '43e3fcdc233588774ac127c5fa69be41e30b4deae8b0306098f4cef7fa63080f', {host: ' ec2- 23 - 21 - 177 - 102.compute - 1.amazonaws.com', dialect: 'postgres'});
 
 const { Quiz, Answer} = model;
 class Quizes {
@@ -10,7 +10,7 @@ class Quizes {
         const { courseId, userId, questions } = req.body
 
         // compute score
-        let score = 0
+        let score = 0 
         for(let question of questions){
            const answer = await Answer.findAll({
                where: {
