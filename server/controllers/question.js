@@ -61,7 +61,7 @@ static async list(req, res) {
         let { id, description, created_at, updated_at, courseId } = question
 
         questions[index] = { id, description, created_at, updated_at, courseId }
-        
+
         questions[index].options = await Option.findAll({
             where:{
                 questionId: question.id
@@ -76,4 +76,3 @@ static async list(req, res) {
 }
 }
  module.exports = Questions
-
